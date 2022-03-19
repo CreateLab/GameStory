@@ -1,0 +1,37 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewModels="clr-namespace:GameStory.ViewModels"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        WindowState="Maximized"
+        x:Class="GameStory.Views.MainGameWindow">
+    <Design.DataContext>
+        <viewModels:MainGameWindowVM />
+    </Design.DataContext>
+    <Window.Styles>
+        <Style Selector="Grid.uploadAnimation">
+            <Style.Animations>
+                <Animation Duration="0:0:0.5">
+                    <KeyFrame Cue="0%">
+                        <Setter Property="IsVisible" Value="False"></Setter>
+                    </KeyFrame>
+                    <KeyFrame Cue="100%">
+                        <Setter Property="IsVisible" Value="True"></Setter>
+                    </KeyFrame>
+                </Animation>
+            </Style.Animations>
+        </Style>
+    </Window.Styles>
+    <Grid RowDefinitions="* Auto" IsVisible="{Binding IsStartUpVisible}"
+          Classes.uploadAnimation="{Binding UploadAnimationStyle}">
+        <Image Grid.RowSpan="2" ZIndex="0" Source="/Assets/background.jpg"></Image>
+        <Image ZIndex="1" Source="/Assets/girl2.png"></Image>
+        <Grid Grid.Row="1" ColumnDefinitions="Auto * Auto">
+            <Button Margin="5"></Button>
+            <TextBox Grid.Column="1" Margin="5">fdacsdbgfnhjhgfdsfghfdfsdgh</TextBox>
+            <Button Grid.Column="2" Margin="5"></Button>
+        </Grid>
+
+    </Grid>
+</Window>

@@ -1,4 +1,5 @@
 using Avalonia;
+using Avalonia.Controls;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
 using GameStory.ViewModels;
@@ -17,6 +18,7 @@ namespace GameStory
         {
             if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
             {
+                desktop.ShutdownMode = ShutdownMode.OnLastWindowClose;
                 desktop.MainWindow = new MainWindow
                 {
                     DataContext = new MainWindowViewModel(),
